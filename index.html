@@ -234,7 +234,16 @@
             { spanish: "médico", english: "medical", context: "It’s a medical issue.", translation: "Es un problema médico." },
             { spanish: "miedo", english: "fear", context: "I have no fear.", translation: "No tengo miedo." }
         ];
+function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 
+    // Mezclar las palabras antes de mostrar las preguntas
+    shuffle(words);
+        
         let currentIndex = 0;
 
         function loadQuestion() {
